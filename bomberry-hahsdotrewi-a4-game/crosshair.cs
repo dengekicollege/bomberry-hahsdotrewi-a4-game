@@ -14,7 +14,11 @@ namespace MohawkGame2D
         public Vector2 mousepos;
         public void Update()
         {
-            mousepos = new Vector2();
+            Color csColor = new Color(243, 0, 0, 159);
+            mousepos = Input.GetMousePosition();
+            Draw.FillColor = csColor;
+            Draw.LineSize = 0;
+            Draw.Circle(mousepos, 5);
         }
     }
 }
