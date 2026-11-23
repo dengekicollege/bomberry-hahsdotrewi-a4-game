@@ -15,6 +15,8 @@ namespace MohawkGame2D
         /// </summary>
         Crosshair crosshair = new Crosshair();
 
+        Bases bases = new Bases();
+
         Vector2 mouseclickpos = Vector2.Zero;
         public void Setup()
         {
@@ -25,6 +27,8 @@ namespace MohawkGame2D
             Draw.Circle(mouseclickpos, 50);
 
             crosshair.Setup();
+
+            bases.Setup();
         }
 
         /// <summary>
@@ -34,10 +38,13 @@ namespace MohawkGame2D
         {
 
             Window.ClearBackground(240, 140, 0);
+            // draw the ground where the cannon and bases sit
+            Draw.FillColor = Color.Black;
+            Draw.Rectangle(0, Window.Height / 1.5f, 1280, Window.Height);
 
-            //Draw.FillColor = Color.Black;
-            //Draw.Circle(Window.Width / 2, Window.Height / 2, 50);
             crosshair.Update();
+            bases.Update();
+            //get position of last click
             if(Input.IsKeyboardKeyPressed(KeyboardKey.Space) == true)
             {
                 mouseclickpos = Input.GetMousePosition();
@@ -47,6 +54,11 @@ namespace MohawkGame2D
             Draw.Circle(mouseclickpos, 50);
             Console.WriteLine(mouseclickpos.X);
             Console.WriteLine(mouseclickpos.Y);
+
+            if (Input.IsKeyboardKeyPressed(KeyboardKey.A))
+            {
+              
+            }
         }
     }
 
