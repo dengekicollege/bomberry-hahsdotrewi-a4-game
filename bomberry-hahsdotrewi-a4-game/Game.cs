@@ -17,7 +17,11 @@ namespace MohawkGame2D
 
         Bases bases = new Bases();
 
-        Vector2 mouseclickpos = Vector2.Zero;
+        Cannon cannon = new Cannon();
+
+        Missile missile = new Missile();
+
+        public Vector2 mouseclickpos = Vector2.Zero;
         public void Setup()
         {
             Window.SetTitle("Intercontinental Ballistic Defences");
@@ -29,6 +33,10 @@ namespace MohawkGame2D
             crosshair.Setup();
 
             bases.Setup();
+
+            cannon.Setup();
+
+            //missile.Setup();
         }
 
         /// <summary>
@@ -55,10 +63,12 @@ namespace MohawkGame2D
             Console.WriteLine(mouseclickpos.X);
             Console.WriteLine(mouseclickpos.Y);
 
-            if (Input.IsKeyboardKeyPressed(KeyboardKey.A))
-            {
-              
-            }
+            cannon.Update();
+
+            missile.Render();
+
+            missile.Setup(cannon.centerscreen, );
+            
         }
     }
 
