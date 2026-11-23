@@ -67,7 +67,7 @@ namespace MohawkGame2D
 
             missile.Render();
 
-            missile.Setup(cannon.centerscreen, );
+            //missile.Setup(cannon.centerscreen, );
             
         }
     }
